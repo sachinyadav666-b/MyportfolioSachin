@@ -17,7 +17,7 @@ const Contact = () => {
     setStatus("sending");
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -53,7 +53,8 @@ const Contact = () => {
           </span>
         </motion.h2>
         <p className="text-gray-200 mb-10">
-          Have a project idea or just want to connect? I&rsquo;d love to hear from you!
+          Have a project idea or just want to connect? I&rsquo;d love to hear
+          from you!
         </p>
 
         {/* Contact form */}
@@ -94,7 +95,10 @@ const Contact = () => {
           </div>
 
           <div>
-            <label htmlFor="message" className="block text-sm mb-1 text-gray-200">
+            <label
+              htmlFor="message"
+              className="block text-sm mb-1 text-gray-200"
+            >
               Message
             </label>
             <textarea
@@ -132,7 +136,10 @@ const Contact = () => {
         <div className="mt-10 flex flex-col items-center justify-center text-gray-200">
           <Mail className="w-6 h-6 mb-1 text-cyan-400" />
           <p className="text-sm">You can also email me at:</p>
-          <a href="mailto:ysachin3021792@gmail.com" className="underline text-cyan-300">
+          <a
+            href="mailto:ysachin3021792@gmail.com"
+            className="underline text-cyan-300"
+          >
             ysachin3021792@gmail.com
           </a>
         </div>

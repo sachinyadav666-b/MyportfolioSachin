@@ -1,16 +1,21 @@
 import express from "express";
 import cors from "cors";
 import nodemailer from "nodemailer";
-import "dotenv/config";          // pulls variables from .env
+import "dotenv/config";
 
 const app = express();
 
 // ---------- middleware ----------
-app.use(cors());                 // allow requests from your React domain
-app.use(express.json());         // parse JSON bodies
+// ✅ Use frontend domain from environment variable
+app.use(cors({
+  origin: process.env.cors_origin,  // e.g. https://myportfolio-sachin.vercel.app
+}));
+
+app.use(express.json());
 
 // ---------- mailer ----------
-console.log(process.env.EMAIL_USER);
+console.log("Email will be sent from:", process.env.EMAIL_USER);
+
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -22,18 +27,17 @@ const transporter = nodemailer.createTransport({
 // ---------- API route ----------
 app.post("/api/contact", async (req, res) => {
   const { name, email, message } = req.body;
-  console.log(name, email, message);
+  console.log("Incoming message:", name, email, message);
 
-  // quick validation
   if (!name || !email || !message) {
     return res.status(400).json({ error: "All fields required." });
   }
 
   const mailOptions = {
     from: `"Portfolio Website" <${process.env.EMAIL_USER}>`,
-    to: process.env.EMAIL_USER,        // send it to yourself
-    replyTo: email,                    // makes Gmail’s “Reply” point to visitor
-    subject: ` New message from ${name}`,
+    to: process.env.EMAIL_USER,
+    replyTo: email,
+    subject: `New message from ${name}`,
     text: `${message}\n\nFrom: ${name} <${email}>`,
   };
 
@@ -41,11 +45,13 @@ app.post("/api/contact", async (req, res) => {
     await transporter.sendMail(mailOptions);
     return res.status(200).json({ ok: true });
   } catch (err) {
-    console.error(err);
+    console.error("Mail send error:", err);
     return res.status(500).json({ error: "Mail not sent." });
   }
 });
 
 // ---------- start server ----------
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`API ready on http://localhost:${PORT}`));
+app.listen(PORT, () => {
+  console.log(`🚀 API running at http://localhost:${PORT}`);
+});
