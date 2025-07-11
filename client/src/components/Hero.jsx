@@ -346,7 +346,7 @@ export default function AnimatedHeroSection() {
               >
                 <button className="btn-gradient text-white px-8 py-4 rounded-full font-semibold flex items-center justify-center hover:glow-effect">
                   <Download className="w-5 h-5 mr-2" />
-                  <a href={sachinResume}>Download CV</a>
+                  <a href={sachinResume} download={sachinResume}>Download CV</a>
                 </button>
                 <button
                   onClick={handleAboutToggle}
