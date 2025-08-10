@@ -6,6 +6,7 @@ const qualifications = [
     degree: 'Bachelor of Computer Applications (BCA)',
     institution: 'Rama University, Kanpur, UttarPradesh, India',
     year: '2023 - 2026',
+    marks: 'cgpa: 8.12',
     description:
       'Pursuing BCA with a strong foundation in software development, web technologies, and data structures.',
   },
@@ -13,6 +14,7 @@ const qualifications = [
     degree: 'Intermediate (12th)',
     institution: 'S.B.R.L Academy, Mainpuri, UttarPradesh, India',
     year: '2022 - 2023',
+    marks: 'Percentage: 87%',
     description:
       'Completed senior secondary education with Physic, chemistery, Math and Computer Science.',
   },
@@ -20,6 +22,7 @@ const qualifications = [
     degree: 'High School (10th)',
     institution: 'S.B.R.L Academy, Mainpuri, Uttarpradesh, India',
     year: '2020 - 2021',
+    marks: 'Percentage: 91%',
     description:
       'Built a strong academic foundation and developed interest in computer science.',
   },
@@ -56,6 +59,7 @@ const Qualification = () => {
             <h3 className="text-2xl font-semibold text-cyan-300">{item.degree}</h3>
             <p className="text-sm text-gray-200">{item.institution}</p>
             <p className="text-xs text-gray-400 italic mb-2">{item.year}</p>
+            <p className="text-sm italic mb-2">{item.marks}</p>
             <p className="text-gray-100">{item.description}</p>
           </motion.div>
         ))}

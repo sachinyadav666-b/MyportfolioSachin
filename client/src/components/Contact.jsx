@@ -3,15 +3,15 @@ import { Mail } from "lucide-react";
 import { motion } from "framer-motion";
 
 const Contact = () => {
-  // 1️⃣  form data + status -----------------------------
+  //  form data + status 
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("idle"); // idle | sending | sent | error
 
-  // 2️⃣  keep inputs controlled -------------------------
+  //   keep inputs controlled 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.id]: e.target.value });
 
-  // 3️⃣  post to your Express API -----------------------
+  //   post to your Express API 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("sending");

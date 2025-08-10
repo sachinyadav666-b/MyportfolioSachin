@@ -5,15 +5,15 @@ import "dotenv/config";
 
 const app = express();
 
-// ---------- middleware ----------
-// ✅ Use frontend domain from environment variable
+//  middleware 
+//Use frontend domain from environment variable
 app.use(cors({
   origin: process.env.cors_origin,  // e.g. https://myportfolio-sachin.vercel.app
 }));
 
 app.use(express.json());
 
-// ---------- mailer ----------
+
 console.log("Email will be sent from:", process.env.EMAIL_USER);
 
 const transporter = nodemailer.createTransport({
@@ -53,5 +53,5 @@ app.post("/api/contact", async (req, res) => {
 // ---------- start server ----------
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`🚀 API running at http://localhost:${PORT}`);
+  console.log(` API running at http://localhost:${PORT}`);
 });

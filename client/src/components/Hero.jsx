@@ -9,7 +9,7 @@ import {
   User,
 } from "lucide-react";
 import sachinBlack2 from ".././assets/sachinBlack2.jpg";
-import sachinResume from "../.././public/sachinResume.pdf"
+import sachinResume from "../.././public/sachinResume.pdf";
 
 export default function AnimatedHeroSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -35,10 +35,10 @@ export default function AnimatedHeroSection() {
   }, []);
 
   const designations = [
+    "Frontend developer",
     "MernStack Developer",
     "Backend developer",
-    "Frontend developer",
-    "React Specialist",
+    "React developer",
   ];
   const [currentDesignation, setCurrentDesignation] = useState(0);
 
@@ -274,6 +274,10 @@ export default function AnimatedHeroSection() {
         .animate-fadeIn {
           animation: fadeIn 0.8s ease-out;
         }
+
+        .skill {
+          color: gold;
+        }
       `}</style>
 
       <section className="hero-bg min-h-screen flex items-center justify-center relative">
@@ -334,9 +338,7 @@ export default function AnimatedHeroSection() {
 
               {/* Description */}
               <div className="fade-in-up" style={{ transitionDelay: "0.8s" }}>
-                <p className="text-white/70 text-lg max-w-md mx-auto lg:mx-0 leading-relaxed">
-                  
-                </p>
+                <p className="text-white/70 text-lg max-w-md mx-auto lg:mx-0 leading-relaxed"></p>
               </div>
 
               {/* Buttons */}
@@ -346,7 +348,9 @@ export default function AnimatedHeroSection() {
               >
                 <button className="btn-gradient text-white px-8 py-4 rounded-full font-semibold flex items-center justify-center hover:glow-effect">
                   <Download className="w-5 h-5 mr-2" />
-                  <a href={sachinResume} download={sachinResume}>Download CV</a>
+                  <a href={sachinResume} download={sachinResume}>
+                    Download CV
+                  </a>
                 </button>
                 <button
                   onClick={handleAboutToggle}
@@ -429,15 +433,16 @@ export default function AnimatedHeroSection() {
               <p className="text-white/90 text-cente text-sm sm:text-base leading-relaxed mb-6">
                 Hi, I'm Sachin Yadav — a MERN Stack Developer passionate about
                 building fast, responsive, and visually engaging web
-                applications. I love working with javascript, React.js, Node.js, Mysql and
-                transforming ideas into elegant digital experiences.
+                applications. I love working with javascript, React.js, Node.js,
+                Mysql and transforming ideas into elegant digital experiences.
               </p>
               <ul className="text-white grid grid-cols-4 gap-2 ">
                 <li className="skill">#javascript</li>
                 <li className="skill">#reactjs</li>
                 <li className="skill">#redux</li>
                 <li className="skill">#nodejs</li>
-                <li className="skill">#express</li>
+                <li className="skill">#nextjs</li>
+                <li className="skill">#expressjs</li>
                 <li className="skill">#mysql</li>
                 <li className="skill">#mongodb</li>
                 <li className="skill">#ejs</li>

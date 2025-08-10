@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Home, User, Code, Mail, Award, GraduationCap } from 'lucide-react';
+import { Menu, X, Home, Medal, User, Code, Mail, Award, GraduationCap } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,10 +13,12 @@ export default function Navbar() {
 
   const navItems = [
     { name: 'Home', href: '/', icon: Home },
-    { name: 'Projects', href: '#projects', icon: Code },
-    { name: 'Skills', href: '#skills', icon: Award },
     { name: 'Qualifications', href: '#qualification', icon: GraduationCap },
+    { name: 'Skills', href: '#skills', icon: Award },
+    { name: 'Projects', href: '#projects', icon: Code },
+    { name: 'Achievements', href: '#achievements', icon: Medal },
     { name: 'Contact', href: '#contact', icon: Mail },
+    
   ];
 
   return (
