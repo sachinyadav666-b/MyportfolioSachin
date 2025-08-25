@@ -379,7 +379,7 @@ export default function AnimatedHeroSection() {
                   <Linkedin className="w-5 h-5" />
                 </a>
                 <a
-                  href="#"
+                  href="mailto:ysachin3021792@gmail.com"
                   className="social-btn w-12 h-12 rounded-full flex items-center justify-center text-white"
                 >
                   <Mail className="w-5 h-5" />

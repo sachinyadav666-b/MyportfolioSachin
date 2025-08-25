@@ -24,7 +24,7 @@ const projects = [
   },
   {
     title: 'Student Management System',
-    description: 'Real-time chat application using React.js, Node.js, and Mysql.',
+    description: 'Student Management System application using React.js, Node.js, and Mysql.',
     tech: ['React.js', 'Node.js', 'Mysql'],
     image: StudentM,
     link: 'https://github.com/sachinyadav666-b/student-management-system.git',
