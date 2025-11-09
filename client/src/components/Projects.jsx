@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Netflix from ".././assets/./images/Netflix.png";
+import chat from ".././assets/./images/chat.png";
+import url from ".././assets/./images/url.png";
 import weather from ".././assets/./images/weather.png";
 import StudentM from ".././assets/./images/StudentM.png";
 import ShoeCompany from ".././assets/./images/ShoeCompany.png";
@@ -8,6 +10,20 @@ import contactBook from ".././assets/./images/contactBook.png";
 import WorldMap from ".././assets/./images/WorldMap.png";
 
 const projects = [
+  {
+    title: 'Fullstack ChatRoom Application',
+    description: 'A responsive Fullstack ChatRoom Application using Socketio which gives Realtime Communication for different users in a group .',
+    tech: ['Reactjs', 'Tailwind css', 'Expressjs', 'Nodejs', 'Socket.io'],
+    image: chat, // Place this image in the /public/images/ folder
+    link: 'https://chat-app-flame-gamma.vercel.app',
+  },
+  {
+    title: 'Fullstack URLShortener Application',
+    description: 'A responsive Fullstack ChatRoom Application using Nodejs which shorts the Large Url including admin panel which sees all url enters by the users and manage it.',
+    tech: ['Reactjs', 'Tailwind css', 'Expressjs', 'Nodejs', 'Mongodb'],
+    image: url, // Place this image in the /public/images/ folder
+    link: 'https://url-shortner-ciwr.vercel.app/',
+  },
   {
     title: 'Netflix Clone',
     description: 'A responsive Netflix clone using HTML, CSS, and JavaScript with a beautiful UI and dynamic content.',
